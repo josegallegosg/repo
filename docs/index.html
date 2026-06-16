@@ -1,262 +1,316 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shoan - El último guardián</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --azul:#0B3B8C;
+    --azul-claro:#EAF4FF;
+    --celeste:#CFE9FF;
+    --blanco:#ffffff;
+    --gris:#f5f7fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:white;
+    color:#17365d;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--azul);
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--azul);
+    font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:120px 8% 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:
+    linear-gradient(
+        rgba(234,244,255,.9),
+        rgba(255,255,255,.9)
+    ),
+    url("img/fondo-glaciares.jpg");
+    background-size:cover;
+}
+
+.hero-text{
+    max-width:550px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:var(--azul);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.boton{
+    background:var(--azul);
+    color:white;
+    padding:15px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.hero-img img{
+    width:500px;
+}
+
+/* PRESENTACIÓN SHOAN */
+
+.presentacion{
+    width:85%;
+    margin:auto;
+    margin-top:-60px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.frase{
+    font-size:1.3rem;
+}
+
+.dato{
+    border-left:3px solid var(--celeste);
+    padding-left:25px;
+}
+
+/* MAPA */
+
+.mapa{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.mapa h2{
+    color:var(--azul);
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+.mapa img{
+    width:350px;
+    transition:.4s;
+}
+
+.mapa img:hover{
+    transform:scale(1.05);
+}
+
+/* CARDS */
+
+.cards{
+    padding:50px 8% 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--azul-claro);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin:15px 0;
+    color:var(--azul);
+}
+
+/* RESUMEN */
+
+.resumen{
+    background:var(--azul-claro);
+    padding:100px 10%;
+}
+
+.resumen h2{
+    text-align:center;
+    color:var(--azul);
+    margin-bottom:40px;
+}
+
+.resumen p{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--azul);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+</style>
+</head>
 <body>
 
-<nav class="navbar">
+<nav>
     <div class="logo">SHOAN</div>
 
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#historia">Historia</a></li>
-        <li><a href="#mapa">Mapa</a></li>
-        <li><a href="#accion">Actúa</a></li>
-    </ul>
+    <div class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Historia</a>
+        <a href="#">Mapa</a>
+        <a href="#">Datos</a>
+    </div>
 </nav>
 
-<!-- HERO -->
+<section class="hero">
 
-<section id="inicio" class="hero">
+    <div class="hero-text">
+        <h1>"Mi hogar se está derritiendo"</h1>
 
-    <div class="parallax-bg"></div>
+        <p>
+            Acompaña a Shoan en una experiencia interactiva
+            sobre los glaciares de Chile y el cambio climático.
+        </p>
 
-    <div class="hero-content">
+        <a href="#" class="boton">
+            Comenzar historia
+        </a>
+    </div>
 
-        <div class="hero-text">
-
-            <h1>
-                "Mi hogar se está derritiendo"
-            </h1>
-
-            <p>
-                Soy Shoan, un huemul de los Andes.
-                Quiero mostrarte lo que está ocurriendo
-                con los glaciares de Chile.
-            </p>
-
-            <a href="#historia" class="btn">
-                Comenzar historia
-            </a>
-
-        </div>
-
-        <div class="hero-shoan">
-
-            <img
-            src="img/shoan.png"
-            alt="Shoan">
-
-        </div>
-
+    <div class="hero-img">
+        <img src="img/shoan.png" alt="Shoan">
     </div>
 
 </section>
 
-<!-- PRESENTACIÓN -->
+<section class="presentacion">
 
-<section id="historia" class="intro reveal">
-
-    <div class="speech">
-
-        <h2>Hola, soy Shoan</h2>
-
+    <div class="frase">
         <p>
-            Me llaman Shoan. En la lengua de quienes
-            habitaron esta tierra antes que todos
-            nosotros, ese es mi nombre.
+            Me llaman Shoan. En la lengua de quienes habitaron
+            esta tierra antes que todos nosotros, ese es mi nombre.
             Y esta es mi historia.
         </p>
-
     </div>
 
     <div class="dato">
-
         <h3>Dato destacado</h3>
-
         <p>
-            Chile concentra cerca del 80% de los
-            glaciares de Sudamérica.
+            Chile posee aproximadamente el 80% de los glaciares
+            de Sudamérica.
         </p>
-
     </div>
 
 </section>
 
-<!-- TIMELINE -->
+<section class="mapa">
 
-<section class="timeline reveal">
+    <h2>Mapa de glaciares de Chile</h2>
 
-    <h2>Hace miles de años...</h2>
+    <img src="img/mapa-chile.png" alt="Mapa">
 
-    <div class="timeline-card">
-        🧊 Formación de glaciares
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>📖 Historia</h3>
+        <p>Descubre la historia de Shoan.</p>
     </div>
 
-    <div class="timeline-card">
-        🏔 Desarrollo de ecosistemas
+    <div class="card">
+        <h3>🧊 Datos reales</h3>
+        <p>Información científica actualizada.</p>
     </div>
 
-    <div class="timeline-card">
-        💧 Fuente de agua para comunidades
+    <div class="card">
+        <h3>📷 Galería</h3>
+        <p>Fotografías y recursos visuales.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌱 Actúa</h3>
+        <p>Pequeñas acciones que generan cambios.</p>
     </div>
 
 </section>
 
-<!-- MAPA -->
-
-<section id="mapa" class="map-section reveal">
-
-    <h2>
-        ¿Dónde están nuestros glaciares?
-    </h2>
-
-    <div class="map-container">
-
-        <img
-        src="img/chile.svg"
-        alt="Mapa de Chile">
-
-        <div class="tooltip">
-            Pasa el cursor sobre una región
-        </div>
-
-    </div>
-
-</section>
-
-<!-- PROBLEMA -->
-
-<section class="problem">
-
-    <div class="overlay"></div>
-
-    <div class="problem-content reveal">
-
-        <h2>
-            El hielo está desapareciendo
-        </h2>
-
-        <p>
-            Cada año parte de mi hogar se derrite.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                🌡️ Aumento de temperatura
-            </div>
-
-            <div class="card">
-                💧 Menos disponibilidad de agua
-            </div>
-
-            <div class="card">
-                🌱 Impacto en biodiversidad
-            </div>
-
-            <div class="card">
-                🏔 Retroceso glaciar
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- COMPARADOR -->
-
-<section class="compare reveal">
-
-    <h2>Antes y después</h2>
-
-    <div class="slider-placeholder">
-
-        Imagen interactiva aquí
-
-    </div>
-
-</section>
-
-<!-- DATOS -->
-
-<section class="facts reveal">
-
-    <h2>Datos que sorprenden</h2>
-
-    <div class="fact-grid">
-
-        <div class="fact">
-            <span>80%</span>
-            <p>de los glaciares de Sudamérica</p>
-        </div>
-
-        <div class="fact">
-            <span>24.000+</span>
-            <p>glaciares inventariados</p>
-        </div>
-
-        <div class="fact">
-            <span>Miles</span>
-            <p>de personas dependen de ellos</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ACCIÓN -->
-
-<section id="accion" class="action reveal">
-
-    <h2>¿Qué puedes hacer?</h2>
-
-    <div class="action-grid">
-
-        <div class="action-card">
-            💧 Ahorrar agua
-        </div>
-
-        <div class="action-card">
-            🚲 Transporte sostenible
-        </div>
-
-        <div class="action-card">
-            🌱 Reducir residuos
-        </div>
-
-        <div class="action-card">
-            📢 Informar a otros
-        </div>
-
-    </div>
-
-</section>
-
-<!-- RESUMEN -->
-
-<section class="summary">
+<section class="resumen">
 
     <h2>Resumen del proyecto narrativo</h2>
 
     <p>
-        Aquí colocarás el texto académico
-        que aparece en tu documento.
+        Aquí iría exactamente el texto de tu resumen del proyecto,
+        manteniendo el diseño visual y la narrativa de Shoan como
+        hilo conductor de toda la experiencia.
     </p>
 
 </section>
 
 <footer>
-
-    <h3>Shoan: El último guardián</h3>
-
-    <p>
-        Proyecto narrativo sobre los glaciares
-        chilenos y el cambio climático.
-    </p>
-
+    © 2026 Shoan - El último guardián
 </footer>
 
-<script src="js/main.js"></script>
-
 </body>
+</html>
