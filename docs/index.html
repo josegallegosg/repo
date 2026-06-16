@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shoan - El último guardián</title>
+<title>Shoan | El Último Guardián</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --azul:#0B3B8C;
-    --azul-claro:#EAF4FF;
-    --celeste:#CFE9FF;
+    --azul:#0b3b8c;
+    --azul-claro:#dff0ff;
+    --celeste:#c7e6ff;
     --blanco:#ffffff;
-    --gris:#f5f7fa;
+    --gris:#f5f9fc;
 }
 
 *{
@@ -25,178 +25,287 @@
     font-family:'Poppins',sans-serif;
 }
 
-body{
-    background:white;
-    color:#17365d;
+html{
+    scroll-behavior:smooth;
 }
 
-/* NAV */
+body{
+    background:var(--gris);
+    color:#204066;
+}
 
-nav{
+/* NAVBAR */
+
+header{
     position:fixed;
     top:0;
     width:100%;
-    background:white;
-    padding:20px 8%;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(12px);
+    padding:18px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.05);
     z-index:1000;
 }
 
 .logo{
-    font-size:1.3rem;
+    font-size:1.4rem;
     font-weight:700;
     color:var(--azul);
 }
 
-.menu{
+nav{
     display:flex;
-    gap:35px;
+    gap:25px;
+    align-items:center;
 }
 
-.menu a{
+nav a{
     text-decoration:none;
     color:var(--azul);
-    font-weight:600;
+    font-weight:500;
+}
+
+.btn-nav{
+    background:var(--azul);
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
     min-height:100vh;
-    padding:120px 8% 60px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    padding:120px 8%;
     background:
     linear-gradient(
-        rgba(234,244,255,.9),
-        rgba(255,255,255,.9)
-    ),
-    url("img/fondo-glaciares.jpg");
-    background-size:cover;
+        rgba(220,240,255,.9),
+        rgba(255,255,255,.95)
+    );
 }
 
 .hero-text{
-    max-width:550px;
+    width:50%;
 }
 
-.hero h1{
+.hero-text h1{
     font-size:4rem;
-    color:var(--azul);
     line-height:1.1;
+    color:var(--azul);
     margin-bottom:20px;
 }
 
-.hero p{
-    font-size:1.2rem;
+.hero-text p{
+    font-size:1.1rem;
+    line-height:1.8;
     margin-bottom:30px;
 }
 
-.boton{
+.hero-btn{
     background:var(--azul);
     color:white;
-    padding:15px 30px;
+    border:none;
+    padding:16px 28px;
     border-radius:40px;
-    text-decoration:none;
-    font-weight:600;
+    cursor:pointer;
 }
 
-.hero-img img{
-    width:500px;
+.hero-image{
+    position:relative;
 }
 
-/* PRESENTACIÓN SHOAN */
+.hero-image img{
+    width:420px;
+    animation:float 4s infinite ease-in-out;
+}
 
-.presentacion{
+.speech{
+    position:absolute;
+    top:40px;
+    right:-20px;
+    background:white;
+    padding:15px 20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+/* TARJETA */
+
+.intro-card{
     width:85%;
     margin:auto;
-    margin-top:-60px;
+    margin-top:-70px;
     background:white;
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border-radius:30px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 
     display:grid;
     grid-template-columns:2fr 1fr;
     gap:30px;
 }
 
-.frase{
-    font-size:1.3rem;
+.quote{
+    font-size:1.2rem;
+    line-height:1.9;
 }
 
-.dato{
-    border-left:3px solid var(--celeste);
-    padding-left:25px;
+.fact-card{
+    background:var(--azul-claro);
+    border-radius:25px;
+    padding:25px;
+}
+
+.fact-card small{
+    color:var(--azul);
+}
+
+.fact-card h3{
+    margin-top:10px;
+}
+
+/* RESUMEN */
+
+.summary{
+    width:85%;
+    margin:100px auto;
+}
+
+.summary h2{
+    color:var(--azul);
+    margin-bottom:25px;
+    font-size:2rem;
+}
+
+.summary-box{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+}
+
+.summary-content{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:30px;
+}
+
+.summary-content img{
+    width:100%;
+    border-radius:25px;
+}
+
+.summary-content p{
+    margin-bottom:20px;
+    line-height:1.8;
 }
 
 /* MAPA */
 
-.mapa{
-    padding:100px 8%;
-    text-align:center;
+.map-section{
+    width:85%;
+    margin:auto;
 }
 
-.mapa h2{
+.map-section h2{
     color:var(--azul);
     margin-bottom:40px;
-    font-size:2.5rem;
 }
 
-.mapa img{
-    width:350px;
-    transition:.4s;
+.map-card{
+    background:white;
+    border-radius:30px;
+    padding:40px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 
-.mapa img:hover{
-    transform:scale(1.05);
+.regions ul{
+    list-style:none;
 }
 
-/* CARDS */
+.regions li{
+    padding:12px;
+    margin-bottom:10px;
+    background:var(--azul-claro);
+    border-radius:15px;
+    transition:.3s;
+}
 
-.cards{
-    padding:50px 8% 100px;
+.regions li:hover{
+    transform:translateX(10px);
+}
+
+.map-image{
+    display:flex;
+    justify-content:center;
+}
+
+.map-image img{
+    width:250px;
+}
+
+.tooltip{
+    margin-top:20px;
+    background:#eef8ff;
+    padding:15px;
+    border-radius:15px;
+}
+
+/* FEATURES */
+
+.features{
+    width:85%;
+    margin:100px auto;
+}
+
+.features h2{
+    text-align:center;
+    color:var(--azul);
+    margin-bottom:50px;
+}
+
+.feature-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
-.card{
-    background:var(--azul-claro);
-    border-radius:20px;
-    padding:25px;
+.feature-card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
     text-align:center;
     transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-8px);
+.feature-card:hover{
+    transform:translateY(-10px);
 }
 
-.card h3{
-    margin:15px 0;
-    color:var(--azul);
-}
-
-/* RESUMEN */
-
-.resumen{
-    background:var(--azul-claro);
-    padding:100px 10%;
-}
-
-.resumen h2{
-    text-align:center;
-    color:var(--azul);
-    margin-bottom:40px;
-}
-
-.resumen p{
-    font-size:1.1rem;
-    line-height:1.8;
+.feature-card button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    background:var(--azul);
+    color:white;
+    border-radius:30px;
 }
 
 /* FOOTER */
@@ -204,112 +313,240 @@ nav{
 footer{
     background:var(--azul);
     color:white;
+    padding:50px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+}
+
+/* ANIMACIONES */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
     text-align:center;
-    padding:30px;
+}
+
+.hero-text{
+    width:100%;
+}
+
+.hero-text h1{
+    font-size:2.7rem;
+}
+
+.hero-image img{
+    width:300px;
+}
+
+.intro-card{
+    grid-template-columns:1fr;
+}
+
+.summary-content{
+    grid-template-columns:1fr;
+}
+
+.map-card{
+    grid-template-columns:1fr;
+}
+
+footer{
+    gap:30px;
+}
+
 }
 
 </style>
+
 </head>
+
 <body>
 
-<nav>
-    <div class="logo">SHOAN</div>
+<header>
 
-    <div class="menu">
-        <a href="#">Inicio</a>
-        <a href="#">Historia</a>
-        <a href="#">Mapa</a>
-        <a href="#">Datos</a>
-    </div>
+<div class="logo">🦌 SHOAN</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Historia</a>
+<a href="#">Mapa</a>
+<a href="#">Resumen</a>
+<button class="btn-nav">Explorar</button>
 </nav>
+
+</header>
 
 <section class="hero">
 
-    <div class="hero-text">
-        <h1>"Mi hogar se está derritiendo"</h1>
+<div class="hero-text">
 
-        <p>
-            Acompaña a Shoan en una experiencia interactiva
-            sobre los glaciares de Chile y el cambio climático.
-        </p>
+<h1>Mi hogar se está derritiendo</h1>
 
-        <a href="#" class="boton">
-            Comenzar historia
-        </a>
-    </div>
+<p>
+Soy Shoan, un huemul guardián de los Andes.
+Acompáñame en una historia interactiva sobre
+los glaciares de Chile y su importancia para el planeta.
+</p>
 
-    <div class="hero-img">
-        <img src="img/shoan.png" alt="Shoan">
-    </div>
+<button class="hero-btn">
+Comenzar historia
+</button>
 
-</section>
+</div>
 
-<section class="presentacion">
+<div class="hero-image">
 
-    <div class="frase">
-        <p>
-            Me llaman Shoan. En la lengua de quienes habitaron
-            esta tierra antes que todos nosotros, ese es mi nombre.
-            Y esta es mi historia.
-        </p>
-    </div>
+<img src="shoan.png" alt="Shoan">
 
-    <div class="dato">
-        <h3>Dato destacado</h3>
-        <p>
-            Chile posee aproximadamente el 80% de los glaciares
-            de Sudamérica.
-        </p>
-    </div>
+<div class="speech">
+Hola, ¿quieres conocer mi historia?
+</div>
+
+</div>
 
 </section>
 
-<section class="mapa">
+<section class="intro-card">
 
-    <h2>Mapa de glaciares de Chile</h2>
+<div class="quote">
 
-    <img src="img/mapa-chile.png" alt="Mapa">
+<p>
+“Me llaman Shoan. En la lengua de quienes habitaron esta tierra
+antes que todos nosotros, ese es mi nombre.
+Y esta es mi historia.”
+</p>
 
-</section>
+</div>
 
-<section class="cards">
+<div class="fact-card">
 
-    <div class="card">
-        <h3>📖 Historia</h3>
-        <p>Descubre la historia de Shoan.</p>
-    </div>
+<small>Dato destacado</small>
 
-    <div class="card">
-        <h3>🧊 Datos reales</h3>
-        <p>Información científica actualizada.</p>
-    </div>
+<h3>
+Chile concentra gran parte de los glaciares de Sudamérica.
+</h3>
 
-    <div class="card">
-        <h3>📷 Galería</h3>
-        <p>Fotografías y recursos visuales.</p>
-    </div>
-
-    <div class="card">
-        <h3>🌱 Actúa</h3>
-        <p>Pequeñas acciones que generan cambios.</p>
-    </div>
+</div>
 
 </section>
 
-<section class="resumen">
+<section class="summary">
 
-    <h2>Resumen del proyecto narrativo</h2>
+<h2>Resumen del proyecto narrativo</h2>
 
-    <p>
-        Aquí iría exactamente el texto de tu resumen del proyecto,
-        manteniendo el diseño visual y la narrativa de Shoan como
-        hilo conductor de toda la experiencia.
-    </p>
+<p>
+Aquí puedes pegar el resumen completo de tu proyecto.
+</p>
+
+<div class="summary-box">
+
+<p>
+Shoan actúa como narrador y guía para explicar la importancia
+de los glaciares chilenos y los desafíos que enfrentan.
+</p>
+
+</div>
+
+</section>
+
+<section class="map-section">
+
+<h2>Mapa de glaciares de Chile</h2>
+
+<div class="map-card">
+
+<div class="regions">
+
+<ul>
+<li>Aysén</li>
+<li>Magallanes</li>
+<li>Los Lagos</li>
+<li>La Araucanía</li>
+<li>Valparaíso</li>
+<li>Coquimbo</li>
+</ul>
+
+</div>
+
+<div class="map-image">
+
+<img src="chile.svg">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<h2>Explora, aprende y actúa</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>📖 Historia</h3>
+<button>Explorar</button>
+</div>
+
+<div class="feature-card">
+<h3>🧊 Datos</h3>
+<button>Explorar</button>
+</div>
+
+<div class="feature-card">
+<h3>🗺️ Mapa</h3>
+<button>Explorar</button>
+</div>
+
+<div class="feature-card">
+<h3>🌱 Acción</h3>
+<button>Explorar</button>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 Shoan - El último guardián
+
+<div>
+<h3>Shoan: El Último Guardián</h3>
+<p>Proyecto sobre glaciares de Chile.</p>
+</div>
+
+<div class="footer-links">
+<a href="#">Inicio</a>
+<a href="#">Mapa</a>
+<a href="#">Créditos</a>
+</div>
+
 </footer>
 
 </body>
